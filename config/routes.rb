@@ -1,9 +1,8 @@
 Boilerplate::Application.routes.draw do
   get "contact/index"
 
-  resources :projects do
-    resources :images
-  end
+  resources :projects
+  resources :images
 
 
   root :to => 'home#index'
