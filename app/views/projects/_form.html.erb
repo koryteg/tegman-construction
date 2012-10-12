@@ -24,8 +24,19 @@
     <%= f.text_area :description %>
   </div>
 	<%= f.fields_for :images, :html => {:multipart => true} do |builder| %>
-	<%= render "images_form", :f => builder %>
+  <div class="field">
+	<% if @project.images.exists? %>
+		<%= image_tag builder.object.image_url(:thumb), :class => "image" %><br />
 	<% end %>
+  </div>
+  <div class="field fields">
+	<%= builder.label :image, "Image Uploader:" %>
+	<%= builder.file_field :image, :rows => 1 %>
+	<%= builder.hidden_field :_destroy %>
+	<%= link_to_remove_fields "remove", builder %>
+  </div>
+	<% end %>
+  <p><%= link_to_add_fields "Add Image", f, :images %></p>
   <div class="actions">
     <%= f.submit %>
   </div>

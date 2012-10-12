@@ -1,9 +1,9 @@
 Boilerplate::Application.routes.draw do
   get "contact/index"
 
-  resources :projects
-  resources :images
-
+  resources :projects do
+    resources :images
+  end
 
   root :to => 'home#index'
   # The priority is based upon order of creation:

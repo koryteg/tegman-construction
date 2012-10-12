@@ -1,0 +1,7 @@
+
+<div class="field fields">
+	<%= f.label :image, "Image Uploader:" %>
+	<%= f.file_field :image, :rows => 1 %>
+	<%= f.hidden_field :_destroy %>
+	<%= link_to_remove_fields "remove", f %>
+</div>

@@ -1,9 +1,8 @@
-rails boilerplate using:
+tegman construction rails app using:
 
 
 postgres
 
-this is the best setup i have found for heroku deployment.
 
 rails -v 3.2.6
 

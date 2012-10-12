@@ -16,6 +16,18 @@ body {
 	margin: 0 auto; 
 	color: $font-color;
 }
+a {
+	color: $font-color;
+	text-decoration: none;
+}
+a:visited {
+	color: darken($font-color, 10%);
+}
+a:hover {
+	color: lighten($font-color, 10%);
+	text-decoration: underline;
+}
+
 
 header{
 	height:80px;
@@ -55,6 +67,8 @@ header{
 footer{
 	height:200px;
 }
+
+
 
 
 /*

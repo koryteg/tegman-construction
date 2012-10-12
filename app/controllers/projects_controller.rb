@@ -25,7 +25,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new.json
   def new
     @project = Project.new
-    3.times { @project.images.build }
+    1.times { @project.images.build }
     
     respond_to do |format|
       format.html # new.html.erb

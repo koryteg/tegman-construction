@@ -53,7 +53,6 @@
 
 
 
-
 // Can also be used with $(document).ready()
 $(window).load(function() {
   $('.flexslider').flexslider({
@@ -61,5 +60,16 @@ $(window).load(function() {
   });
 });
 
+
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields, .image").hide();
+}
+
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g")
+  $(link).parent().before(content.replace(regexp, new_id));
+}
 
 
