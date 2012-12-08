@@ -1,4 +1,6 @@
 Boilerplate::Application.routes.draw do
+  devise_for :users
+
   get "contact/index"
 
   resources :projects do
