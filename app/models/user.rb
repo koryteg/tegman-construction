@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
    if Rails.env.production?
-     devise :database_authenticatable,
+     devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :trackable, :validatable
    else
      devise :database_authenticatable, :registerable,
