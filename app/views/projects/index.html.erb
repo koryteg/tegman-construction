@@ -1,29 +1,21 @@
-<h1>Listing projects</h1>
+<h1>Projects</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Role</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @projects.each do |project| %>
-  <tr>
-    <td><%= project.name %></td>
-    <td><%= project.role %></td>
-    <td><%= project.description %></td>
-    <td><%= link_to 'Show', project %></td>
+ <div class="project"> 
+    <h4><%= project.name %></h4>
+    <%= link_to (image_tag project.images.find(:first).image_url(:thumb).to_s), project %>
 	<% if user_signed_in? %>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<br />
+    <%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>
-  </tr>
+  </div>
 <% end %>
-</table>
 
+
+<br />
 <br />
 <% if user_signed_in? %>
 <%= link_to 'New Project', new_project_path %>

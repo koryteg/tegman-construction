@@ -10,15 +10,13 @@
 		<li><%= link_to( "Contact", contact_index_path ) %></li>
 	</ul>
 
-	<p>tegmanconstruction@gmail.com</p>
+	<p><a href="mailto:tegmanconstruction@gmail.com">tegmanconstruction@gmail.com</a></p>
 	<p>206.334.2102</p>
-	<p><% if user_signed_in? %>
+	<p>
+	<% if user_signed_in? %>
 	  Logged in as <strong><%= current_user.email %></strong>.
 	  <%= link_to 'Edit profile', edit_user_registration_path %> |
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-	<% else %>
-	  <%= link_to "Sign up", new_user_registration_path %> |
-	  <%= link_to "Login", new_user_session_path %>
 	<% end %>
 	</p>
 </header>

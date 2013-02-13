@@ -64,8 +64,23 @@ header{
 	height:600px;
 }
 
+.project{
+	margin-right: 10px;
+	display: block;
+	float: left;
+}
+.image{
+	width: 100%;
+	
+}
+.description{
+	float: right;
+	width: 460px;
+}
+
 footer{
 	height:200px;
+	clear:both;
 }
 
 

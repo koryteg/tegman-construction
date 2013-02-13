@@ -10,14 +10,14 @@
   <%= @project.role %>
 </p>
 
-<p>
+<p class="description">
   <b>Description:</b>
   <%= @project.description %>
 </p>
 
 
 <% for image in @project.images %>
-	<%= image_tag image.image_url.to_s %>
+	<%= image_tag image.image_url.to_s, :class => 'image' %>
 <% end %>
 
 <% if user_signed_in? %>
